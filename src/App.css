@@ -1,0 +1,412 @@
+/* General Styles */
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  margin: 0;
+
+  padding: 0;
+
+  line-height: 1.6;
+
+  background-color: #f9f9f9;
+
+}
+
+
+
+/* Main Resume Layout */
+
+.resume {
+
+  display: flex;
+
+  min-height: 100vh;
+
+  background-color: white;
+
+}
+
+
+
+/* Sidebar */
+
+.sidebar {
+
+  width: 30%;
+
+  background-color: #1e3a5f;
+
+  color: white;
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  box-sizing: border-box;
+
+}
+
+
+
+.sidebar .profile-pic img {
+
+  width: 150px;
+
+  height: 150px;
+
+  border-radius: 50%;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.sidebar-section {
+
+  flex: 1;
+  /* Ensures even spacing for sections */
+
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 15px;
+
+}
+
+
+
+.sidebar-section hr {
+
+  border: none;
+
+  height: 1px;
+
+  background-color: #ffffff;
+
+  margin: 10px 0;
+
+}
+
+
+
+.sidebar-section h2 {
+
+  font-size: 1.2rem;
+
+  margin-bottom: 10px;
+
+  border-bottom: 2px solid #ffffff;
+
+  padding-bottom: 5px;
+  text-transform: uppercase;
+
+}
+
+
+
+.sidebar-section p,
+
+.sidebar-section li {
+
+  font-size: 0.9rem;
+
+  margin: 5px 0;
+
+}
+
+
+
+.sidebar-section ul {
+
+  list-style: none;
+
+  padding: 0;
+
+}
+
+
+
+.sidebar-section ul li {
+
+  margin-bottom: 5px;
+
+  position: relative;
+
+  padding-left: 20px;
+
+}
+
+
+
+.sidebar-section ul li::before {
+
+  content: "•";
+
+  color: #ffffff;
+
+  font-weight: bold;
+
+  position: absolute;
+
+  left: 0;
+
+}
+
+
+
+/* Main Content */
+
+.main-content {
+
+  width: 70%;
+
+  padding: 20px;
+
+}
+
+
+
+.main-content h1 {
+
+  font-size: 2rem;
+
+  margin: 0px;
+
+}
+
+
+
+.main-content h3 {
+
+  font-weight: 300;
+
+  color: #1e3a5f;
+  margin: 0px;
+}
+
+
+
+.main-content h2 {
+
+  margin-top: 30px;
+
+  color: #1e3a5f;
+
+  border-bottom: 2px solid #1e3a5f;
+
+  padding-bottom: 5px;
+
+  text-transform: uppercase;
+
+}
+
+
+
+.main-content hr {
+
+  border: 1px solid #1e3a5f;
+
+  height: 1px;
+
+  background-color: #1e3a5f;
+
+  margin: 10px 0;
+  width: 10%;
+
+}
+
+
+.main-content ul {
+
+  padding-left: 20px;
+  list-style-type: none;
+
+}
+
+
+
+.main-content ul li {
+
+  margin-bottom: 10px;
+
+  position: relative;
+
+  padding-left: 20px;
+
+}
+
+
+
+.main-content ul li::before {
+
+  content: "•";
+
+  color: #1e3a5f;
+
+  font-weight: bold;
+
+  position: absolute;
+
+  left: 0;
+
+}
+
+
+
+.experience {
+
+  margin-bottom: 20px;
+
+  padding-left: 15px;
+
+  position: relative;
+
+}
+
+.experience h4,
+.experience p {
+  margin: 0px;
+}
+
+
+.experience::before {
+
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  background-color: #1e3a5f;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.experience::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: -6px;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 2px;
+
+  background-color: #1e3a5f;
+
+}
+
+
+
+.references p {
+
+  margin-bottom: 15px;
+
+}
+
+.references {
+  display: flex;
+  flex-direction: column;
+}
+
+.references .references-items {
+  display: flex;
+  gap: 50%;
+}
+
+
+
+/* Responsive Styles */
+
+@media (max-width: 1024px) {
+
+  .resume {
+
+    flex-direction: column;
+
+  }
+
+
+
+  .sidebar {
+
+    width: 100%;
+
+  }
+
+
+
+  .main-content {
+
+    width: 100%;
+
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+  .sidebar {
+
+    padding: 15px;
+
+  }
+
+
+
+  .main-content {
+
+    padding: 15px;
+
+  }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+  .sidebar .profile-pic img {
+
+    width: 100px;
+
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+  .sidebar-section h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+
+  }
+
+  .main-content h1 {
+
+    font-size: 1.5rem;
+
+  }
+
+}
