@@ -36,7 +36,7 @@ const Resume = () => {
     };
 
     useEffect(() => {
-        fetch("/data/data.json")
+        fetch(`${process.env.PUBLIC_URL}/data/data.json`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(`Http error ! status : ${response.status}`);
