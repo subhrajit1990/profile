@@ -5,9 +5,8 @@ const ProfileDesc = ({ profileDesc }) => {
     return (
         <div className="profile">
             <h2>Profile</h2>
-            <p>
-                {profileDesc.desc}
-            </p>
+            {profileDesc.summary && <p className="summary"><strong>Summary:</strong> {profileDesc.summary}</p>}
+            <p>{profileDesc.desc}</p>
         </div>
     )
 }

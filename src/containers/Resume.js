@@ -15,8 +15,8 @@ const Resume = () => {
     const sidebarData = {
         contact: {
             "phone": "7000000001",
-            "email": "xxxxxxxabc@hmProfileHeader profileHeader={data.profileHeader} />ail.com",
-            "address": "House Number : 90, ",
+            "email": "xxxxxxxabc@hmail.com",
+            "address": "House Number : 90, Lorem Lane",
             "website": "www.demo1.com"
         },
         "education": [
