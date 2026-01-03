@@ -66,7 +66,7 @@ const Resume = () => {
                 <ProfileImage profileImage={data.sidebar.profileImg} />
 
                 <div className="sidebar-section">
-                    <Sidebar sidebarData={data.sidebar || sidebarData} />
+                    <Sidebar sidebarData={data.sidebar || sidebarData} profileName={(data.profileHeader && data.profileHeader.name) || 'default'} />
                 </div>
             </div>
 

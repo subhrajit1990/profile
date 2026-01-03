@@ -311,6 +311,24 @@ body {
 /* Social icons */
 .social-links a { margin-right: 8px; color: inherit; font-size: 18px; }
 
+/* Align social icons inside contact area */
+.contact .social-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+.contact .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.03);
+  text-decoration: none;
+}
+
 /* Print styles for resume -> single column, hide interactive elements */
 @media print {
   body * { visibility: hidden; }
@@ -321,6 +339,19 @@ body {
   .main-content { width: 100%; padding: 0; }
   hr.designationLine { border: none; border-top: 1px solid #000; }
 }
+
+/* Keyword hit button */
+.hit-btn {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  cursor: pointer;
+}
+.hit-btn:hover { background: #f0f0f0; }
+
+/* Highlight "hot" keywords */
+.keyword-hot { font-weight: 700; color: #c62828; }
 
   position: absolute;
 
