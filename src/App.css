@@ -1,6 +1,12 @@
 /* General Styles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
 
+:root{
+  --sidebar-width: 340px;
+  --profile-size: 140px;
+  --profile-border: 8px;
+}
+
 body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   margin: 0;
@@ -25,7 +31,7 @@ body {
 
 /* Sidebar (left column) */
 .sidebar {
-  width: 340px;
+  width: var(--sidebar-width);
   background: #1b0d2b; /* deep purple */
   color: #e9dbe7;
   padding: 120px 36px 40px 36px;
@@ -74,15 +80,16 @@ body {
 
 /* Profile picture placed to overlap both columns */
 .profile-pic {
-  width: 140px;
-  height: 140px;
+  width: var(--profile-size);
+  height: var(--profile-size);
   border-radius: 50%;
   overflow: hidden;
-  border: 8px solid #fff;
+  border: var(--profile-border) solid #fff;
   box-shadow: 0 8px 22px rgba(0,0,0,0.28);
   background: #fff;
   position: absolute;
-  left: calc(340px - 45px); /* shift slightly into main column */
+  /* center circle on the split between sidebar and main */
+  left: calc(var(--sidebar-width) - (var(--profile-size) / 2));
   top: 36px;
   z-index: 40;
 }
@@ -91,13 +98,13 @@ body {
 /* Main content (right column) */
 .main-content {
   flex: 1 1 auto;
-  padding: 48px 64px 64px 64px;
+  padding: 180px 64px 64px 64px; /* add top padding so content starts below header/image */
   background: #fff;
   min-width: 0;
 }
 
 .profile-header { margin-top: 12px; }
-.name-ribbon { position: absolute; left: calc(340px + 28px); top: 44px; display: flex; flex-direction: column; align-items: flex-start; z-index: 30; }
+.name-ribbon { position: absolute; left: calc(var(--sidebar-width) + 24px); top: 44px; display: flex; flex-direction: column; align-items: flex-start; z-index: 30; }
 .ribbon { display: inline-block; background: #b98b95; color: #fff; padding: 12px 56px; font-size: 2.6rem; letter-spacing: 6px; font-family: 'Playfair Display', serif; }
 .designation { margin-top: 10px; font-weight: 700; color: #2b1637; letter-spacing: 2px; }
 .designationLine { margin-top: 8px; border: none; height: 6px; background: linear-gradient(90deg,#b98b95,#2b1637); width: 52%; }
