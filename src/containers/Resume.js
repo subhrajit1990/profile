@@ -6,6 +6,7 @@ import ProfileImage from "../components/ProfileImage";
 import References from "../components/References";
 import ProfileDesc from "../components/ProfileDesc";
 import WorkExp from "../components/WorkExp";
+import { generateResumePdf } from "../utils/generatePdf";
 
 
 const Resume = () => {
@@ -58,6 +59,8 @@ const Resume = () => {
     return (
 
         <div className="resume">
+
+            <button className="download-btn" onClick={() => generateResumePdf('.resume', `${(data.profileHeader && data.profileHeader.name) ? data.profileHeader.name.replace(/\s+/g,'_') : 'resume'}.pdf`)} aria-label="Download PDF">Download</button>
 
             {/* Main Content first in DOM for ATS friendliness */}
             <main className="main-content" role="main">

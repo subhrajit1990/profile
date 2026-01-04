@@ -1,34 +1,54 @@
 import React from "react";
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe, FaLinkedin, FaGithub, FaTwitter, FaSkype, FaInstagram } from "react-icons/fa";
 
 const Sidebar = ({ sidebarData }) => {
     return (
-        <>
+        <aside>
             <div className="contact">
                 <h2>Contact</h2>
                 <address>
-                    <div><FaPhoneAlt /> <a href={`tel:${sidebarData.contact.phone}`}>{sidebarData.contact.phone}</a></div>
-                    <div><FaEnvelope /> <a href={`mailto:${sidebarData.contact.email}`}>{sidebarData.contact.email}</a></div>
-                    <div><FaMapMarkerAlt /> <span>{sidebarData.contact.address}</span></div>
-                    <div><FaGlobe /> <a href={sidebarData.contact.website} target="_blank" rel="noreferrer">{sidebarData.contact.website}</a></div>
+                    <div className="contact-item"><FaMapMarkerAlt className="icon" /> <span>{sidebarData.contact.address}</span></div>
+                    <div className="contact-item"><FaPhoneAlt className="icon" /> <a href={`tel:${sidebarData.contact.phone}`}>{sidebarData.contact.phone}</a></div>
+                    <div className="contact-item"><FaEnvelope className="icon" /> <a href={`mailto:${sidebarData.contact.email}`}>{sidebarData.contact.email}</a></div>
                 </address>
-
-                {sidebarData.social && (
-                    <div className="social-links">
-                        {sidebarData.social.linkedin && (<a href={sidebarData.social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>)}
-                        {sidebarData.social.github && (<a href={sidebarData.social.github} target="_blank" rel="noreferrer">GitHub</a>)}
-                        {sidebarData.social.twitter && (<a href={sidebarData.social.twitter} target="_blank" rel="noreferrer">Twitter</a>)}
-                        {sidebarData.social.instagram && (<a href={`https://instagram.com/${sidebarData.social.instagram.replace(/^@/, '')}`} target="_blank" rel="noreferrer">Instagram</a>)}
-                    </div>
-                )}
             </div>
+
             <div className="education">
                 <h2>Education</h2>
-                {sidebarData.education.map((edu, index) => (
-                    <p key={index}><strong>{edu.year}</strong><br />{edu.school}<br />{edu.degree || edu.branch || ''}<br />{edu.location || ''}</p>
-                ))}
+                <div className="education-list">
+                    {sidebarData.education.map((edu, index) => (
+                        <div className="edu-item" key={index}>
+                            <div className="edu-year">{edu.year}</div>
+                            <div className="edu-body">
+                                <div className="edu-school">{edu.school}</div>
+                                <div className="edu-degree">{edu.degree || edu.branch}</div>
+                                {edu.location && <div className="edu-location">{edu.location}</div>}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
+
+            <div className="certificates">
+                <h2>Certificates</h2>
+                <ul>
+                    {(sidebarData.certificates || []).map((c, i) => (
+                        <li key={i}><strong>{c.year}</strong> {c.title} <div className="issuer">{c.issuer}</div></li>
+                    ))}
+                </ul>
+            </div>
+
+            <div className="social-media">
+                <h2>Social Media</h2>
+                <div className="social-list">
+                    {sidebarData.social && sidebarData.social.skype && (<div className="social-row"><FaSkype className="icon" /> <span>{sidebarData.social.skype}</span></div>)}
+                    {sidebarData.social && sidebarData.social.twitter && (<div className="social-row"><FaTwitter className="icon" /> <span>{sidebarData.social.twitter}</span></div>)}
+                    {sidebarData.social && sidebarData.social.linkedin && (<div className="social-row"><FaLinkedin className="icon" /> <span>{sidebarData.social.linkedin}</span></div>)}
+                    {sidebarData.social && sidebarData.social.instagram && (<div className="social-row"><FaInstagram className="icon" /> <span>{sidebarData.social.instagram}</span></div>)}
+                </div>
+            </div>
+
             <div className="skills">
                 <h2>Skills</h2>
                 <ul>
@@ -37,15 +57,7 @@ const Sidebar = ({ sidebarData }) => {
                     ))}
                 </ul>
             </div>
-            <div className="languages">
-                <h2>Languages</h2>
-                <ul>
-                    {sidebarData.languages && sidebarData.languages.map((language, index) => (
-                        <li key={index}>{language}</li>
-                    ))}
-                </ul>
-            </div>
-        </>
+        </aside>
     )
 }
 export default Sidebar;

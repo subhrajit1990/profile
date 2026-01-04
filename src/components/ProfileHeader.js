@@ -11,9 +11,7 @@ const ProfileHeader = ({ profileHeader }) => {
                 </div>
 
                 <div style={{ textAlign: 'right' }}>
-                    <div style={{display: 'flex', gap: 8, justifyContent: 'flex-end'}}>
-                        <button className="btn" onClick={() => generateResumePdf('.resume', `${(profileHeader && profileHeader.name) ? profileHeader.name.replace(/\s+/g,'_') : 'resume'}.pdf`)} aria-label="Download PDF">Download</button>
-                    </div>
+                    {/* Download button moved to top-right floating control in Resume.js */}
                 </div>
             </div>
 
