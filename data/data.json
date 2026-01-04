@@ -1,79 +1,97 @@
 {
   "profileHeader": {
-    "name": "Mr./Mrs./Miss Loprem Ipsum",
-    "designation": "Lorem Ipsum"
-    ,"hits": 123
+    "name": "Lorem Ipsum",
+    "designation": "Team Leader",
+    "hits": 42
   },
   "sidebar": {
     "profileImg": "https://dummyimage.com/150x150/000/fff",
     "contact": {
-      "phone": "7000000000",
-      "email": "xxxxxxxabc@hmail.com",
-      "address": "Lorem Ipsum : 90, Ipsum Lorem ",
-      "website": "www.demo.com"
+      "phone": "+91 0000000000",
+      "email": "Lorem-Ipsum@Lorem.com",
+      "address": ", USA",
+      "website": "https://github.com"
     },
     "social": {
-      "linkedin": "https://www.linkedin.com/in/demo",
-      "github": "https://github.com/demo",
-      "twitter": "https://twitter.com/demo"
+      "skype": "skype.profile",
+      "twitter": "twitter.profile",
+      "linkedin": "url.linkedin",
+      "instagram": "@instagram"
     },
     "education": [
       {
-        "year": "2010 - 2013",
-        "school": "Lorem Ipsum University",
-        "branch": "Ipsum"
+        "year": "20XX",
+        "school": "Lorem Ipsum",
+        "degree": "M.A. Business Administration",
+        "location": "NY, USA"
       },
       {
-        "year": "2007 - 2010",
-        "school": "Lorem Ipsum University",
-        "branch": "Lorem"
+        "year": "20XX",
+        "school": "Lorem Ipsum",
+        "degree": "B.A. Business Administration",
+        "location": "NY, USA"
+      },
+      {
+        "year": "20XX",
+        "school": "Lorem Ipsum School",
+        "degree": "High School Diploma",
+        "location": "NY, USA"
       }
     ],
-    "skills": [
-      "Lorem",
-      "Ipsum",
-      "Lorem Ipsum",
-      "Ipsum",
-      "Lorem Ipsum"
+    "certificates": [
+      { "year": "20XX", "title": "PACE Certification", "issuer": "ASAP" },
+      { "year": "20XX", "title": "Microsoft Office Specialist", "issuer": "Certiport Testing Center" }
     ],
-    "languages": [
-      "enim",
-      "nostrud"
-    ]
+    "skills": [
+      "Creativity",
+      "Critical Thinking",
+      "Proactive",
+      "Crisis Management",
+      "Excel",
+      "Google Suite"
+    ],
+    "languages": ["English"]
   },
-  "references":[
-    {
-      "name":"lorem Ipsum",
-      "address":"lorem Inc.",
-      "phone":"+123-456-7890",
-      "email":"lorem@hmail.com"
-    },
-    {
-      "name":"lorem Ipsum",
-      "address":"Ipsum Inc.",
-      "phone":"+123-456-7890",
-      "email":"Ipsum@hmail.com"
-    }
+  "references": [
+    { "name": "Lorem Ipsum", "company": "Lorem Ipsum", "phone": "+91 1111111111", "email": "Lorem_Ipsum@LoremIpsum.example" }
   ],
-  "profile":{
-    "summary":"Experienced software developer with a focus on front-end React applications, UI/UX and small backend integrations.",
-    "desc":" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud exercitation."
+  "profile": {
+    "summary": "Highly organized and detail-oriented office manager with over 5 years of experience managing administrative tasks. Seeking a challenging role in a dynamic and fast-paced environment.",
+    "desc": "I can utilize and nurture my skills and expertise while contributing to the company's success."
   },
-  "workExp":[
+  "workExp": [
     {
-      "orgName":"Lorem",
-      "designation":"Ipsum",
-      "scope":["Lorem ipsum dolor sit amet.","consectetur adipiscing elit.","Ut enim ad minim veniam quis nostrud exercitation."]
+      "orgName": "Lorem Ipsum",
+      "designation": "Senior Software Engineer",
+      "from": "20XX",
+      "to": "20XX",
+      "bullets": [
+        "Organize and oversee office operations.",
+        "Manage payroll and ensure timely payment to employees.",
+        "Control correspondence, including mail and email.",
+        "Ensure the availability of office materials."
+      ]
     },
     {
-      "orgName":"Ipsum",
-      "designation":"Lorem",
-      "scope":["Lorem ipsum dolor sit amet.","consectetur adipiscing elit.","Ut enim ad minim veniam quis nostrud exercitation."]
+      "orgName": "Lorem Ipsum's",
+      "designation": "Senior Software Engineer",
+      "from": "20XX",
+      "to": "20XX",
+      "bullets": [
+        "Oversaw the maintenance and repair of office equipment.",
+        "Coordinated travel arrangements for staff members.",
+        "Managed office security and compliance with safety protocols."
+      ]
     },
     {
-      "orgName":"Lorem ipsum",
-      "designation":"Ipsum Lorem",
-      "scope":["Lorem ipsum dolor sit amet.","consectetur adipiscing elit.","Ut enim ad minim veniam quis nostrud exercitation."]
+      "orgName": "Lorem Ipsum Cosmetics",
+      "designation": "Software Engineer",
+      "from": "20XX",
+      "to": "20XX",
+      "bullets": [
+        "Responded to employee complaints and concerns.",
+        "Developed and maintained relationships with vendors and service providers."
+      ]
     }
   ]
 }
