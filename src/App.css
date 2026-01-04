@@ -9,387 +9,132 @@ body {
   padding: 0;
 
   line-height: 1.6;
+/* General Styles */
 
-  background-color: #f9f9f9;
-
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: #f3f3f4;
+  -webkit-font-smoothing: antialiased;
 }
 
-
-
 /* Main Resume Layout */
-
 .resume {
   display: flex;
   min-height: 100vh;
   background-color: #fff;
   max-width: 1100px;
-  margin: 30px auto;
-  box-shadow: 0 6px 30px rgba(0,0,0,0.12);
-  overflow: hidden;
-  border-radius: 4px;
+  margin: 24px auto;
+  box-shadow: 0 8px 36px rgba(2,6,23,0.12);
+  overflow: visible;
+  border-radius: 6px;
+  position: relative;
 }
 
-
-
-/* Sidebar */
-
-.experience {
-  margin-bottom: 20px;
-  padding-left: 6px;
-}
-.experience h4,
-.experience p {
-  margin: 0;
-}
-
-.experience h3 {
-  text-transform: uppercase;
-  font-size: 0.95rem;
-
-  background: #fff;
-}
-
-
-
-.sidebar-section {
-  flex: 1;
+/* Sidebar (left column) */
+.sidebar {
+  width: 320px;
+  background: #1b0d2b; /* deep purple */
+  color: #e9dbe7;
+  padding: 56px 36px 40px 36px;
+  box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin: 12px 0;
+  gap: 18px;
 }
 
-
-
-.sidebar-section hr {
-
-  border: none;
-
-  height: 1px;
-
-  background-color: #ffffff;
-
-  margin: 10px 0;
-
-}
-
-
-
-.sidebar-section h2 {
-
-  font-size: 1.2rem;
-
-  margin-bottom: 10px;
-
-  border-bottom: 2px solid #ffffff;
-
-  padding-bottom: 5px;
+.sidebar h2 {
+  font-size: 1.05rem;
+  margin: 18px 0 12px 0;
+  color: #d8c0cc;
+  letter-spacing: 2px;
   text-transform: uppercase;
-
 }
 
-
-
-.sidebar-section p,
-
-.sidebar-section h2 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #e9dbe7;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-
-.sidebar-section ul {
-
-  list-style: none;
-
-  padding: 0;
-
-}
-
-
-
-.sidebar-section ul li {
-
-  margin-bottom: 5px;
-
-  position: relative;
-
-  padding-left: 20px;
-
-}
-
-
-
-.sidebar-section ul li::before {
-
-  content: "•";
-
-  color: #ffffff;
-
-  font-weight: bold;
-
-  position: absolute;
-
-  left: 0;
-
-}
-
-
-
-/* Main Content */
-
-.main-content {
-  width: 66%;
-  padding: 40px 48px;
-  background: #fff;
-}
-
-
-
-.main-content h3 {
-  font-weight: 400;
-  color: #6b6b6b;
-  margin: 0 0 6px 0;
-
-
-}
-
-
-
-.main-content h1 {
-  font-size: 2.2rem;
-  margin: 0 0 6px 0;
-  letter-spacing: 1px;
-
-  color: #1e3a5f;
-  margin: 0px;
-}
-
-
-
-.main-content h2 {
-
-  margin-top: 30px;
-
-  color: #1e3a5f;
-
-  border-bottom: 2px solid #1e3a5f;
-
-  padding-bottom: 5px;
-    margin-top: 26px;
-    color: #2b1637;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 8px;
-    text-transform: uppercase;
-    font-size: 0.95rem;
-}
-
-.main-content hr {
-
-  border: 1px solid #1e3a5f;
-
-  height: 1px;
-
-  background-color: #1e3a5f;
-
-  margin: 10px 0;
-  width: 10%;
-
-}
-
-
-.main-content hr {
-  border: 0;
-  height: 8px;
-  background: linear-gradient(90deg,#b98b95,#2b1637);
-  margin: 10px 0 20px 0;
-  width: 100%;
-}
-
-
-.main-content ul li {
-
-  margin-bottom: 10px;
-
-  position: relative;
-
-  padding-left: 20px;
-
-}
-
-
-
-.main-content ul li::before {
-
-  content: "•";
-
-  color: #1e3a5f;
-
-  font-weight: bold;
-
-  position: absolute;
-
-  left: 0;
-
-}
-
-
-
-.experience {
-
-  margin-bottom: 20px;
-
-  padding-left: 15px;
-
-  position: relative;
-
-}
-
-.experience h4,
-.experience p {
-  margin: 0px;
-}
-
-
-.experience::before {
-
-  content: "";
-  position: absolute;
-  left: -10px;
-  top: 0;
-  bottom: 0;
-  background-color: #1e3a5f;
-  width: 10px;
-  height: 10px;
+.sidebar address { font-style: normal; line-height: 1.6; color: #f0e6ef; }
+.sidebar .contact div { margin: 8px 0; }
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar ul li { margin-bottom: 12px; font-size: 0.95rem; color: #f3e9f1; }
+.sidebar .certificates { margin-top: 6px; }
+.sidebar .social-links a { color: #f3e9f1; text-decoration: none; display:block; margin:6px 0; }
+
+/* Profile picture placed to overlap both columns */
+.profile-pic {
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  background: #fff;
+  position: absolute;
+  left: 260px; /* positions circle roughly at the split */
+  top: 28px;
+}
+.profile-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Main content (right column) */
+.main-content {
+  flex: 1 1 auto;
+  padding: 48px 64px 64px 64px;
+  background: #fff;
+  min-width: 0;
 }
 
-.experience::after {
+.profile-header { margin-top: 12px; }
+.profile-header .name-row { display:flex; align-items:center; gap:18px; }
+.ribbon { display: inline-block; background: #b98b95; color: #fff; padding: 12px 42px; font-size: 1.6rem; letter-spacing: 4px; margin-left: 40px; }
+.designationLine { margin-top: 8px; border: none; height: 6px; background: linear-gradient(90deg,#b98b95,#2b1637); width: 60%; }
 
-  content: "";
+.main-content h1 { font-size: 2.6rem; margin: 6px 0 6px 0; color: #2b1637; letter-spacing: 2px; }
+.main-content h2 { margin-top: 22px; color: #2b1637; text-transform: uppercase; font-size: 0.95rem; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+.main-content h3 { margin: 6px 0; color: #1e2030; font-size: 1rem; }
+.profile .summary { margin-bottom: 14px; }
+
+.main-content ul { padding-left: 18px; }
+.main-content ul li { margin-bottom: 8px; }
+.main-content ul li::marker { color: #2b1637; }
+
+/* Experience blocks */
+.work-experience { margin-top: 18px; }
+.experience { margin-bottom: 18px; border-bottom: 1px solid #f1f1f1; padding-bottom: 16px; }
+.experience article { margin-bottom: 12px; display: flex; gap: 12px; }
+.job-dates { color: #9aa0a6; font-size: 0.82rem; width: 84px; flex-shrink: 0; }
+.job-body { flex: 1; }
+.job-body h3 { margin: 0; font-weight: 700; }
+.job-body p { margin: 4px 0 8px 0; }
 
 /* Header buttons */
-.profile-header-top .btn {
-    padding: 6px 10px;
-    border: 1px solid #ccc;
-    background: #f5f5f5;
-    cursor: pointer;
-    border-radius: 4px;
-}
+.profile-header-top .btn { padding: 6px 10px; border: 1px solid #ccc; background: #f5f5f5; cursor: pointer; border-radius: 4px; }
 .profile-header-top .btn:hover { background: #eee; }
 
-/* Social icons */
-.social-links a { margin-right: 8px; color: inherit; font-size: 18px; }
+/* Sidebar small tweaks */
+.contact .social-links { display: block; margin-top: 8px; }
+.contact .social-links a { display: inline-block; margin: 6px 0; }
 
-/* Align social icons inside contact area */
-.contact .social-links {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-top: 8px;
-}
-.contact .social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  background: rgba(0,0,0,0.03);
-  text-decoration: none;
-}
-
-/* Print styles for resume -> single column, hide interactive elements */
+/* Print styles: keep visual design for PDF export */
 @media print {
-  body * { visibility: hidden; }
-  .resume, .resume * { visibility: visible; }
-  .resume { position: absolute; left: 0; top: 0; width: 100%; }
   .btn, .social-links a { display: none !important; }
-  .sidebar { display: none; }
-  .main-content { width: 100%; padding: 0; }
-  hr.designationLine { border: none; border-top: 1px solid #000; }
+  .resume { box-shadow: none; max-width: 100%; margin: 0; border-radius: 0; }
+  .profile-pic { left: 220px; }
+  .designationLine { display: none; }
 }
-
-/* Keyword hit button */
-.hit-btn {
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  background: #fafafa;
-  cursor: pointer;
-}
-.hit-btn:hover { background: #f0f0f0; }
-
-/* Highlight "hot" keywords */
-.keyword-hot { font-weight: 700; color: #c62828; }
-
-  position: absolute;
-
-  left: -6px;
-
-  top: 0;
-
-  bottom: 0;
-
-  width: 2px;
-
-  background-color: #1e3a5f;
-
-}
-
-
-
-.references p {
-
-  margin-bottom: 15px;
-
-}
-
-.references {
-  display: flex;
-  flex-direction: column;
-}
-
-.references .references-items {
-  display: flex;
-  gap: 50%;
-}
-
-
 
 /* Responsive Styles */
-
 @media (max-width: 1024px) {
-
-  .resume {
-
-    flex-direction: column;
-
-  }
-
-
-
-  .sidebar {
-
-    width: 100%;
-
-  }
-
-
-
-  .main-content {
-
-    width: 100%;
-
-  }
-
+  .resume { flex-direction: column; }
+  .sidebar { width: 100%; padding: 28px; }
+  .main-content { padding: 24px; }
+  .profile-pic { position: relative; left: auto; top: auto; margin: 0 auto 12px auto; }
 }
 
-
-
 @media (max-width: 768px) {
+  .sidebar { padding: 18px; }
+  .ribbon { padding: 10px 20px; font-size: 1.2rem; }
+}
 
   .sidebar {
 
