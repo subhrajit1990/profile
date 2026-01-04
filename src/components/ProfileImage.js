@@ -1,11 +1,12 @@
 import React from "react";
 
 
-const ProfileImage = ({ profileImage }) => {
+const ProfileImage = ({ profileImage, profileName }) => {
 return (
-<div className="profile-pic">
-    <img src={profileImage} alt="Profile" />
-</div>
+    <figure className="profile-pic">
+        <img src={profileImage} alt={profileName ? `${profileName} photo` : 'Profile'} />
+        {profileName && <figcaption style={{position: 'absolute', left: '-9999px'}}>{profileName}</figcaption>}
+    </figure>
 )
 }
 export default ProfileImage;

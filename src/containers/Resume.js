@@ -59,22 +59,8 @@ const Resume = () => {
 
         <div className="resume">
 
-            {/* Sidebar */}
-
-            <div className="sidebar">
-
-                <ProfileImage profileImage={data.sidebar.profileImg} />
-
-                <div className="sidebar-section">
-                    <Sidebar sidebarData={data.sidebar || sidebarData} profileName={(data.profileHeader && data.profileHeader.name) || 'default'} />
-                </div>
-            </div>
-
-
-
-            {/* Main Content */}
-
-            <div className="main-content">
+            {/* Main Content first in DOM for ATS friendliness */}
+            <main className="main-content" role="main">
 
                 <ProfileHeader profileHeader={data.profileHeader} />
 
@@ -82,11 +68,19 @@ const Resume = () => {
 
                 <WorkExp workExp={data.workExp} />
 
-                {data.references.length === 0 ? ("No References") : (
+                {data.references && data.references.length > 0 && (
                     <References references={data.references} />
                 )}
 
-            </div>
+            </main>
+
+            {/* Sidebar comes after main content in DOM (still visually can be styled left) */}
+            <aside className="sidebar" aria-label="Contact and sidebar">
+                <ProfileImage profileImage={data.sidebar.profileImg} profileName={data.profileHeader && data.profileHeader.name} />
+                <div className="sidebar-section">
+                    <Sidebar sidebarData={data.sidebar || sidebarData} profileName={(data.profileHeader && data.profileHeader.name) || 'default'} />
+                </div>
+            </aside>
 
         </div>
 

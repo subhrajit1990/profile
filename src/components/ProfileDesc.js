@@ -3,11 +3,11 @@ import React from "react";
 
 const ProfileDesc = ({ profileDesc }) => {
     return (
-        <div className="profile">
-            <h2>Profile</h2>
-            {profileDesc.summary && <p className="summary"><strong>Summary:</strong> {profileDesc.summary}</p>}
-            <p>{profileDesc.desc}</p>
-        </div>
+        <section className="profile" aria-labelledby="profile-heading">
+            <h2 id="profile-heading">Profile</h2>
+            {profileDesc.summary && <p className="summary"><strong>Summary: </strong>{profileDesc.summary}</p>}
+            {profileDesc.desc && <p>{profileDesc.desc}</p>}
+        </section>
     )
 }
 export default ProfileDesc;

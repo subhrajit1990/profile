@@ -2,15 +2,21 @@ import React from "react";
 
 
 const References = ({ references }) => {
-    return ( 
-        <div className="references">         
-                <h2>References</h2>
-                <div className="references-items">
-                    {references.map((ref, index) => (
-                    <p key={index}>{ref.name}<br />{ref.address}<br />{ref.phone}<br />{ref.email}</p>
+    return (
+        <section className="references" aria-labelledby="references-heading">
+            <h2 id="references-heading">References</h2>
+            <div className="references-items">
+                {references.map((ref, index) => (
+                    <div key={index} className="reference-item">
+                        <p><strong>{ref.name}</strong></p>
+                        {ref.company && <p>{ref.company}</p>}
+                        {ref.address && <p>{ref.address}</p>}
+                        {ref.phone && <p>Phone: {ref.phone}</p>}
+                        {ref.email && <p>Email: {ref.email}</p>}
+                    </div>
                 ))}
-                </div>
-            </div >
+            </div>
+        </section>
     )
 }
 export default References;

@@ -77,18 +77,21 @@ const Sidebar = ({ sidebarData, profileName = 'default' }) => {
     return (
         <>
             <div className="contact">
-                <h2>1. Contact</h2>
-                <p><FaPhoneAlt /> {sidebarData.contact.phone}</p>
-                <p><FaEnvelope /> {sidebarData.contact.email}</p>
-                <p><FaMapMarkerAlt /> {sidebarData.contact.address}</p>
-                <p><FaGlobe /> {sidebarData.contact.website}</p>
+                <h2>Contact</h2>
+                <address>
+                    <div><FaPhoneAlt /> <a href={`tel:${sidebarData.contact.phone}`}>{sidebarData.contact.phone}</a></div>
+                    <div><FaEnvelope /> <a href={`mailto:${sidebarData.contact.email}`}>{sidebarData.contact.email}</a></div>
+                    <div><FaMapMarkerAlt /> <span>{sidebarData.contact.address}</span></div>
+                    <div><FaGlobe /> <a href={sidebarData.contact.website} target="_blank" rel="noreferrer">{sidebarData.contact.website}</a></div>
+                </address>
 
                 {sidebarData.social && (
-                    <p className="social-links">
-                        {sidebarData.social.linkedin && (<a href={sidebarData.social.linkedin} target="_blank" rel="noreferrer"><FaLinkedin /></a>)}
-                        {sidebarData.social.github && (<a href={sidebarData.social.github} target="_blank" rel="noreferrer"><FaGithub /></a>)}
-                        {sidebarData.social.twitter && (<a href={sidebarData.social.twitter} target="_blank" rel="noreferrer"><FaTwitter /></a>)}
-                    </p>
+                    <div className="social-links">
+                        {sidebarData.social.linkedin && (<a href={sidebarData.social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>)}
+                        {sidebarData.social.github && (<a href={sidebarData.social.github} target="_blank" rel="noreferrer">GitHub</a>)}
+                        {sidebarData.social.twitter && (<a href={sidebarData.social.twitter} target="_blank" rel="noreferrer">Twitter</a>)}
+                        {sidebarData.social.instagram && (<a href={`https://instagram.com/${sidebarData.social.instagram.replace(/^@/, '')}`} target="_blank" rel="noreferrer">Instagram</a>)}
+                    </div>
                 )}
             </div>
             <div className="education">
@@ -98,29 +101,19 @@ const Sidebar = ({ sidebarData, profileName = 'default' }) => {
                 ))}
             </div>
             <div className="skills">
-                <h2>3. Skills</h2>
+                <h2>Skills</h2>
                 <div style={{display: 'flex', gap: 8, marginBottom: 8}}>
                     <button className="btn" onClick={exportWeights}>Export Weights</button>
                     <button className="btn" onClick={injectJsonLd}>Inject JSON-LD</button>
                 </div>
                 <ul>
-                    {sidebarData.skills.map((skill, index) => {
-                        const count = keywordCounts[skill] || 0;
-                        const isHot = count >= 3 || topKeywords.includes(skill);
-                        return (
-                            <li key={index} className={isHot ? 'keyword-hot' : ''} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-                                <span>{skill} {isHot && <small style={{color: '#b71c1c', marginLeft: 6}}>★</small>}</span>
-                                <span style={{display: 'flex', gap: 8, alignItems: 'center'}}>
-                                    <small style={{color:'#666'}}>{count}</small>
-                                    <button className="hit-btn" onClick={() => hitKeyword(skill)} aria-label={`Hit ${skill}`}>+Hit</button>
-                                </span>
-                            </li>
-                        )
-                    })}
+                    {sidebarData.skills.map((skill, index) => (
+                        <li key={index}>{skill}</li>
+                    ))}
                 </ul>
             </div>
             <div className="languages">
-                <h2>4. Languages</h2>
+                <h2>Languages</h2>
                 <ul>
                     {sidebarData.languages.map((language, index) => (
                         <li key={index}>{language}</li>
