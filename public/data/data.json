@@ -9,7 +9,7 @@
     "contact": {
       "phone": "+91 0000000000",
       "email": "Lorem-Ipsum@Lorem.com",
-      "address": ", USA",
+      "address": "Lorem Ipsum : 90, Ipsum Lorem",
       "website": "https://github.com"
     },
     "social": {
@@ -23,19 +23,19 @@
         "year": "20XX",
         "school": "Lorem Ipsum",
         "degree": "M.A. Business Administration",
-        "location": "NY, USA"
+        "location": "Lorem Ipsum : 90, Ipsum Lorem"
       },
       {
         "year": "20XX",
         "school": "Lorem Ipsum",
         "degree": "B.A. Business Administration",
-        "location": "NY, USA"
+        "location": "Lorem Ipsum : 90, Ipsum Lorem"
       },
       {
         "year": "20XX",
         "school": "Lorem Ipsum School",
         "degree": "High School Diploma",
-        "location": "NY, USA"
+        "location": "Lorem Ipsum : 90, Ipsum Lorem"
       }
     ],
     "certificates": [
